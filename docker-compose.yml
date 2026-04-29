@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    build: ./app
+    ports:
+      - "5000:5000"
+  helper:
+    build: ./helper
+    ports:
+      - "5001:5001"
