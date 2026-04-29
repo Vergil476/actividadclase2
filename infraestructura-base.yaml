@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Infraestructura base para despliegue de plataforma Spotify-like.
+Resources:
+  StaticAssetsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: spotify-assets-production-2026
+  
+  AppServerInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0c55b159cbfafe1f0 # Amazon Linux 2 AMI
+      Tags:
+        - Key: Name
+          Value: Spotify-App-Server
